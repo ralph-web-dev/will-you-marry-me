@@ -961,77 +961,90 @@ html, body {
 
 @media (max-width: 600px) {
     .hero-container {
-        padding: 4.8rem 0.8rem 2rem;
+        padding: 5.5rem 1rem 2.2rem;
     }
 
     .top-controls {
-        top: 10px;
+        top: 12px;
         left: 50%;
         transform: translateX(-50%);
         right: auto;
-        width: calc(100% - 16px);
+        width: calc(100% - 20px);
         max-width: 440px;
         justify-content: space-between;
-        gap: 4px;
+        gap: 6px;
     }
 
     .palette-picker {
-        padding: 3px 6px;
-        gap: 3px;
-        max-width: calc(100% - 90px);
+        padding: 4px 8px;
+        gap: 5px;
+        max-width: calc(100% - 105px);
     }
 
     .palette-dot {
-        padding: 1px;
+        padding: 2px;
     }
 
     .dot-swatch {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
     }
 
     .control-btn {
-        padding: 5px 8px;
-        font-size: 0.78rem;
+        padding: 6px 12px;
+        font-size: 0.82rem;
         white-space: nowrap;
     }
 
     .header-badge {
-        font-size: clamp(0.68rem, 3vw, 0.8rem);
-        padding: 4px 12px;
-        margin-bottom: 0.8rem;
+        font-size: clamp(0.72rem, 3.2vw, 0.85rem);
+        padding: 5px 16px;
+        margin-bottom: 1.2rem;
         white-space: nowrap;
-        max-width: 90vw;
+        max-width: 94vw;
+        letter-spacing: 0.8px;
     }
 
     .hero-title {
-        font-size: clamp(1.3rem, 5.8vw, 2.2rem);
-        margin-bottom: 0.6rem;
+        font-size: clamp(1.6rem, 6.8vw, 2.5rem);
+        margin-bottom: 0.8rem;
         line-height: 1.25;
+        padding: 0 4px;
     }
 
     .hero-subtitle {
-        font-size: clamp(0.8rem, 3.2vw, 0.95rem);
-        margin-bottom: 1.5rem;
+        font-size: clamp(0.88rem, 3.6vw, 1.02rem);
+        margin-bottom: 1.8rem;
+        line-height: 1.5;
+        padding: 0 8px;
     }
 
     .ring-box {
-        width: clamp(130px, 42vw, 190px);
-        height: clamp(130px, 42vw, 190px);
+        width: clamp(170px, 52vw, 230px);
+        height: clamp(170px, 52vw, 230px);
+    }
+
+    .ring-action-hint {
+        padding: 10px 22px;
+        font-size: clamp(0.9rem, 3.8vw, 1.02rem);
     }
 
     .modal-card {
         padding: 1.8rem 1.2rem;
-        border-radius: 24px;
-        max-width: 92vw;
-        max-height: 88vh;
+        border-radius: 26px;
+        max-width: 94vw;
+        max-height: 90vh;
+    }
+
+    .proposal-question {
+        font-size: clamp(1.5rem, 5.5vw, 2.1rem);
     }
 
     .success-card {
-        padding: 1.5rem 1.2rem;
-        border-radius: 24px;
+        padding: 1.6rem 1.2rem;
+        border-radius: 26px;
         max-width: 94vw;
-        max-height: 90vh;
+        max-height: 92vh;
     }
 
     .wedding-image-wrapper {
@@ -1040,17 +1053,11 @@ html, body {
     }
 
     .wedding-img {
-        max-height: 220px;
+        max-height: 230px;
     }
 
     .success-title {
-        font-size: clamp(1.4rem, 5vw, 1.8rem);
-    }
-
-    .success-message {
-        font-size: 0.9rem;
-        line-height: 1.45;
-        margin-bottom: 0.8rem;
+        font-size: clamp(1.35rem, 4.8vw, 1.75rem);
     }
 
     .btn {
@@ -1081,12 +1088,13 @@ html, body {
 
     .no-speech-bubble {
         padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
+        max-width: calc(100vw - 24px);
     }
 
     .blehhh-img {
-        width: 46px;
-        height: 46px;
+        width: 40px;
+        height: 40px;
     }
 }
 
