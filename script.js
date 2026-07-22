@@ -634,7 +634,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, slideDurationMs);
     }
 
-    function handleYesClick() {
+    function handleYesClick(e) {
+        if (Date.now() - modalOpenedTime < 450) {
+            return;
+        }
         playVictorySound();
         proposalModal.classList.add('hidden');
         if (noBtn) {
