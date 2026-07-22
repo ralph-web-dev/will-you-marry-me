@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const soundIcon = document.getElementById('sound-icon');
     const soundLabel = soundBtn.querySelector('.control-label');
     const fearlessSong = document.getElementById('fearless-song');
+    const catOverlay = document.getElementById('cat-overlay');
+    const catSong = document.getElementById('cat-song');
+    const catCloseBtn = document.getElementById('cat-close-btn');
+    const catTriggerBadge = document.getElementById('cat-trigger-badge');
 
     let soundEnabled = true;
     let currentTheme = 'dark';
@@ -184,13 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
         soundLabel.textContent = soundEnabled ? 'Sound On' : 'Muted';
         if (soundEnabled) {
             initAudioContext();
-            if (fearlessSong && !successOverlay.classList.contains('hidden')) {
+            if (catSong && catOverlay && !catOverlay.classList.contains('hidden')) {
+                catSong.play().catch(e => console.log('Audio play error:', e));
+            } else if (fearlessSong && !successOverlay.classList.contains('hidden')) {
                 fearlessSong.play().catch(e => console.log('Audio play error:', e));
             }
         } else {
-            if (fearlessSong) {
-                fearlessSong.pause();
-            }
+            if (fearlessSong) fearlessSong.pause();
+            if (catSong) catSong.pause();
         }
     });
 
@@ -523,6 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fadeInInterval = null;
     let fadeOutInterval = null;
+    let catCrashTimeout = null;
     // Set timestamp in seconds to jump straight to the chorus (e.g. 48s for Fearless chorus)
     const SONG_START_TIME = 48;
 
@@ -530,6 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!fearlessSong || !soundEnabled) return;
         if (fadeInInterval) clearInterval(fadeInInterval);
         if (fadeOutInterval) clearInterval(fadeOutInterval);
+        if (catCrashTimeout) clearTimeout(catCrashTimeout);
 
         fearlessSong.currentTime = SONG_START_TIME;
         fearlessSong.volume = 0;
@@ -543,6 +550,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     fearlessSong.volume = vol;
                     if (vol >= 1) clearInterval(fadeInInterval);
                 }, 50);
+
+                // Crash the proposal with cat MENGGAY after 7.5 seconds into chorus
+                catCrashTimeout = setTimeout(() => {
+                    if (successOverlay && !successOverlay.classList.contains('hidden')) {
+                        showCatSurprise();
+                    }
+                }, 7500);
             }).catch(e => console.log('Audio play error:', e));
         }
     }
@@ -551,6 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!fearlessSong) return;
         if (fadeInInterval) clearInterval(fadeInInterval);
         if (fadeOutInterval) clearInterval(fadeOutInterval);
+        if (catCrashTimeout) clearTimeout(catCrashTimeout);
 
         let vol = fearlessSong.volume;
         fadeOutInterval = setInterval(() => {
@@ -660,14 +675,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
     }
 
+    let catDismissTimeout = null;
+
+    function dismissCatSurprise() {
+        if (catDismissTimeout) clearTimeout(catDismissTimeout);
+        if (catSong) {
+            catSong.pause();
+            catSong.currentTime = 0;
+        }
+        if (fearlessSong && soundEnabled && !successOverlay.classList.contains('hidden')) {
+            fearlessSong.volume = 1;
+            fearlessSong.play().catch(e => console.log('Fearless resume error:', e));
+        }
+        if (catOverlay) catOverlay.classList.add('hidden');
+    }
+
+    function showCatSurprise() {
+        if (fearlessSong) {
+            fearlessSong.pause();
+        }
+        if (catOverlay) catOverlay.classList.remove('hidden');
+
+        if (soundEnabled && catSong) {
+            catSong.currentTime = 0;
+            catSong.volume = 1;
+            catSong.play().catch(e => console.log('Cat song play error:', e));
+        }
+
+        triggerConfettiBurst();
+        if (celAnimationId) cancelAnimationFrame(celAnimationId);
+        animateCelebration();
+    }
+
+    if (catTriggerBadge) {
+        catTriggerBadge.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showCatSurprise();
+        });
+    }
+
+    if (catCloseBtn) {
+        catCloseBtn.addEventListener('click', () => {
+            dismissCatSurprise();
+        });
+    }
+
     yesBtn.addEventListener('click', handleYesClick);
 
     replayBtn.addEventListener('click', () => {
         if (celebrationInterval) clearInterval(celebrationInterval);
         if (slideshowInterval) clearInterval(slideshowInterval);
+        if (catCrashTimeout) clearTimeout(catCrashTimeout);
+        if (catDismissTimeout) clearTimeout(catDismissTimeout);
         confettiParticles = [];
         celCtx.clearRect(0, 0, celebrationCanvas.width, celebrationCanvas.height);
         stopFearlessSong();
+        if (catSong) {
+            catSong.pause();
+            catSong.currentTime = 0;
+        }
+        if (catOverlay) catOverlay.classList.add('hidden');
         goToSlide(0);
         successOverlay.classList.add('hidden');
         resetNoBtnPosition();
