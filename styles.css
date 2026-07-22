@@ -7,11 +7,12 @@
     --rose-accent: #ff3b6b;
     --rose-light: #ff7597;
     --rose-soft: rgba(255, 59, 107, 0.15);
-    --glass-bg: rgba(26, 6, 17, 0.75);
-    --glass-border: rgba(244, 196, 48, 0.3);
-    --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 59, 107, 0.2);
+    --glass-bg: rgba(26, 6, 17, 0.85);
+    --glass-border: rgba(244, 196, 48, 0.4);
+    --glass-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 59, 107, 0.25);
     --text-main: #ffffff;
     --text-sub: #ffd1dc;
+    --modal-overlay-bg: rgba(13, 0, 7, 0.85);
     --font-heading: 'Playfair Display', serif;
     --font-handwriting: 'Great Vibes', cursive;
     --font-body: 'Outfit', sans-serif;
@@ -23,32 +24,34 @@
     --bg-primary: #fffbf7;
     --bg-radial: radial-gradient(circle at 50% 35%, #ffffff 0%, #f7ebe1 50%, #ebd7c8 100%);
     --gold-primary: #c59b27;
-    --gold-light: #8b6508;
+    --gold-light: #6e5005;
     --gold-dark: #6e5005;
     --rose-accent: #e05275;
     --rose-light: #f285a2;
-    --rose-soft: rgba(224, 82, 117, 0.12);
-    --glass-bg: rgba(255, 252, 248, 0.92);
-    --glass-border: rgba(197, 155, 39, 0.45);
-    --glass-shadow: 0 20px 50px rgba(150, 100, 50, 0.12), 0 0 35px rgba(224, 82, 117, 0.15);
+    --rose-soft: rgba(224, 82, 117, 0.15);
+    --glass-bg: rgba(255, 252, 248, 0.94);
+    --glass-border: rgba(197, 155, 39, 0.5);
+    --glass-shadow: 0 25px 60px rgba(120, 80, 40, 0.18), 0 0 35px rgba(224, 82, 117, 0.2);
     --text-main: #2d0d18;
-    --text-sub: #6e3a4b;
+    --text-sub: #5c2c3b;
+    --modal-overlay-bg: rgba(45, 13, 24, 0.65);
 }
 
 [data-theme="blush"] {
     --bg-primary: #fff0f3;
     --bg-radial: radial-gradient(circle at 50% 35%, #ffffff 0%, #ffe3e8 50%, #f7cad0 100%);
     --gold-primary: #d4af37;
-    --gold-light: #806000;
+    --gold-light: #604500;
     --gold-dark: #604500;
     --rose-accent: #ff4d6d;
     --rose-light: #ff85a1;
-    --rose-soft: rgba(255, 77, 109, 0.15);
-    --glass-bg: rgba(255, 245, 247, 0.92);
-    --glass-border: rgba(255, 77, 109, 0.35);
-    --glass-shadow: 0 20px 50px rgba(255, 77, 109, 0.15), 0 0 30px rgba(212, 175, 55, 0.2);
-    --text-main: #4a0e17;
-    --text-sub: #802334;
+    --rose-soft: rgba(255, 77, 109, 0.18);
+    --glass-bg: rgba(255, 245, 247, 0.94);
+    --glass-border: rgba(255, 77, 109, 0.45);
+    --glass-shadow: 0 25px 60px rgba(255, 77, 109, 0.2), 0 0 35px rgba(212, 175, 55, 0.25);
+    --text-main: #3d0a13;
+    --text-sub: #6e1c2b;
+    --modal-overlay-bg: rgba(61, 10, 19, 0.65);
 }
 
 [data-theme="lavender"] {
@@ -59,28 +62,30 @@
     --gold-dark: #b17acc;
     --rose-accent: #c77dff;
     --rose-light: #e0aaff;
-    --rose-soft: rgba(199, 125, 255, 0.18);
-    --glass-bg: rgba(25, 12, 38, 0.78);
-    --glass-border: rgba(199, 125, 255, 0.4);
-    --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(199, 125, 255, 0.25);
+    --rose-soft: rgba(199, 125, 255, 0.22);
+    --glass-bg: rgba(28, 14, 42, 0.88);
+    --glass-border: rgba(199, 125, 255, 0.45);
+    --glass-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(199, 125, 255, 0.3);
     --text-main: #ffffff;
     --text-sub: #e8d7ff;
+    --modal-overlay-bg: rgba(12, 4, 20, 0.85);
 }
 
 [data-theme="sage"] {
     --bg-primary: #f4f7f4;
     --bg-radial: radial-gradient(circle at 50% 35%, #ffffff 0%, #e8f0e8 50%, #d5e5d5 100%);
     --gold-primary: #c59b27;
-    --gold-light: #52796f;
-    --gold-dark: #354f46;
-    --rose-accent: #52796f;
-    --rose-light: #84a98c;
-    --rose-soft: rgba(82, 121, 111, 0.15);
-    --glass-bg: rgba(248, 252, 248, 0.92);
-    --glass-border: rgba(82, 121, 111, 0.4);
-    --glass-shadow: 0 20px 50px rgba(47, 62, 70, 0.12), 0 0 30px rgba(197, 155, 39, 0.2);
-    --text-main: #1b2624;
-    --text-sub: #354f46;
+    --gold-light: #2f4e46;
+    --gold-dark: #243b35;
+    --rose-accent: #436b60;
+    --rose-light: #6e9488;
+    --rose-soft: rgba(67, 107, 96, 0.18);
+    --glass-bg: rgba(248, 252, 248, 0.94);
+    --glass-border: rgba(67, 107, 96, 0.45);
+    --glass-shadow: 0 25px 60px rgba(47, 62, 70, 0.18), 0 0 35px rgba(197, 155, 39, 0.25);
+    --text-main: #141f1d;
+    --text-sub: #2f4e46;
+    --modal-overlay-bg: rgba(20, 31, 29, 0.65);
 }
 
 *, *::before, *::after {
@@ -1156,7 +1161,7 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 0, 5, 0.92);
+    background: var(--modal-overlay-bg);
     backdrop-filter: blur(18px);
     z-index: 3000;
     display: flex;
@@ -1164,7 +1169,7 @@ html, body {
     justify-content: center;
     padding: 1.5rem;
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, background 0.4s ease;
     perspective: 1200px;
 }
 
@@ -1175,15 +1180,17 @@ html, body {
 
 .cat-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(30, 2, 16, 0.95) 0%, rgba(60, 5, 30, 0.95) 100%);
+    background: var(--glass-bg);
     border: 3px solid var(--rose-accent);
     border-radius: min(32px, 6vw);
     padding: clamp(1.5rem, 3.5vh, 2.5rem) clamp(1.5rem, 4.5vw, 2.5rem);
     max-width: min(520px, 92vw);
     width: 100%;
     text-align: center;
-    box-shadow: 0 25px 60px rgba(255, 59, 107, 0.4), 0 0 50px rgba(244, 196, 48, 0.4);
+    box-shadow: var(--glass-shadow);
+    color: var(--text-main);
     animation: catCardPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }
 
 @keyframes catCardPop {
@@ -1209,7 +1216,7 @@ html, body {
     border-radius: 24px;
     overflow: hidden;
     border: 4px solid var(--gold-primary);
-    box-shadow: 0 12px 35px rgba(255, 59, 107, 0.6);
+    box-shadow: 0 12px 35px var(--rose-soft);
     animation: catShake 0.4s infinite alternate ease-in-out;
 }
 
@@ -1223,15 +1230,15 @@ html, body {
 .cat-title {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 5.5vw, 2.6rem);
-    color: #ff527b;
+    color: var(--rose-accent);
     margin-bottom: 0.6rem;
-    text-shadow: 0 0 20px rgba(255, 59, 107, 0.6);
+    text-shadow: 0 0 20px var(--rose-soft);
     animation: textPulse 1.2s infinite alternate ease-in-out;
 }
 
 .cat-subtitle {
     font-size: clamp(0.95rem, 2.2vh, 1.15rem);
-    color: var(--gold-light);
+    color: var(--text-sub);
     margin-bottom: 1.6rem;
     font-weight: 400;
 }
