@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Forever Promise 💍❤️ | Will You Marry Me?</title>
+    <meta name="description" content="An interactive romantic proposal experience built with love.">
+    <link id="favicon" rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='40' r='17' fill='none' stroke='%23F4C430' stroke-width='4.5'/%3E%3Cpolygon points='32,10 41,20 32,29 23,20' fill='%23FFFFFF' stroke='%23F4C430' stroke-width='1.2'/%3E%3Cpolygon points='32,10 41,20 32,20' fill='%23FFF2A1'/%3E%3Cpolygon points='32,20 41,20 32,29' fill='%23FF3B6B' opacity='0.4'/%3E%3Cpath d='M44,12 L46,15 L49,15 L46,17 L47,20 L44,18 L41,20 L42,17 L39,15 L42,15 Z' fill='%23FFF2A1'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="top-controls">
+        <div class="palette-picker" role="toolbar" aria-label="Color Themes">
+            <button class="palette-dot" data-theme-val="cream" title="Cream & Champagne" aria-label="Cream Theme">
+                <span class="dot-swatch swatch-cream"></span>
+            </button>
+            <button class="palette-dot active" data-theme-val="dark" title="Dark Velvet & Rose Gold (Original Saved)"
+                aria-label="Dark Velvet Theme">
+                <span class="dot-swatch swatch-dark"></span>
+            </button>
+            <button class="palette-dot" data-theme-val="blush" title="Blush Pink & Rose Quartz"
+                aria-label="Blush Pink Theme">
+                <span class="dot-swatch swatch-blush"></span>
+            </button>
+            <button class="palette-dot" data-theme-val="lavender" title="Lavender & Midnight Amethyst"
+                aria-label="Lavender Theme">
+                <span class="dot-swatch swatch-lavender"></span>
+            </button>
+            <button class="palette-dot" data-theme-val="sage" title="Sage Green & Warm Gold"
+                aria-label="Sage Green Theme">
+                <span class="dot-swatch swatch-sage"></span>
+            </button>
+        </div>
+
+        <button id="sound-btn" class="control-btn" title="Toggle Sound Effects" aria-label="Toggle Sound">
+            <span id="sound-icon">🎵</span>
+            <span class="control-label">Sound On</span>
+        </button>
+    </div>
+
+    <main class="hero-container">
+        <div class="header-badge">
+            <span class="sparkle">✨</span>
+            <span>A Secret Message Just For You</span>
+            <span class="sparkle">✨</span>
+        </div>
+
+        <h1 class="hero-title">Hold My Hand & Listen Close</h1>
+        <p class="hero-subtitle">Tap the golden ring below to unlock what my heart wants to tell you...</p>
+
+        <div class="ring-wrapper" id="ring-trigger" role="button" tabindex="0"
+            aria-label="Click to open proposal modal">
+            <div class="ring-glow-aura"></div>
+            <div class="sparkles-container">
+                <div class="sparkle-pt pt-1">✦</div>
+                <div class="sparkle-pt pt-2">✧</div>
+                <div class="sparkle-pt pt-3">✦</div>
+                <div class="sparkle-pt pt-4">✧</div>
+            </div>
+
+            <div class="ring-box">
+                <svg class="ring-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFF2A1" />
+                            <stop offset="30%" stop-color="#F4C430" />
+                            <stop offset="70%" stop-color="#D4AF37" />
+                            <stop offset="100%" stop-color="#AA771C" />
+                        </linearGradient>
+
+                        <radialGradient id="ringShadow" cx="50%" cy="50%" r="50%">
+                            <stop offset="70%" stop-color="rgba(0,0,0,0)" />
+                            <stop offset="100%" stop-color="rgba(80,45,0,0.5)" />
+                        </radialGradient>
+
+                        <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="35%" stop-color="#E0F7FA" />
+                            <stop offset="70%" stop-color="#80DEEA" />
+                            <stop offset="100%" stop-color="#E1F5FE" />
+                        </linearGradient>
+
+                        <radialGradient id="diamondGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.9)" />
+                            <stop offset="50%" stop-color="rgba(179, 229, 252, 0.4)" />
+                            <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+                        </radialGradient>
+                    </defs>
+
+                    <ellipse cx="100" cy="195" rx="55" ry="10" fill="rgba(0, 0, 0, 0.25)" filter="blur(4px)" />
+
+                    <path d="M 50 145 C 40 90, 160 90, 150 145 C 140 195, 60 195, 50 145 Z" fill="none"
+                        stroke="url(#goldGrad)" stroke-width="22" stroke-linecap="round" />
+
+                    <circle cx="100" cy="65" r="40" fill="url(#diamondGlow)" class="diamond-flare" />
+
+                    <path d="M 86 75 L 100 95 L 114 75 Z" fill="url(#goldGrad)" />
+                    <path d="M 82 62 L 88 78 M 118 62 L 112 78 M 100 60 L 100 80" stroke="url(#goldGrad)"
+                        stroke-width="4" stroke-linecap="round" />
+
+                    <polygon points="100,32 124,55 116,75 84,75 76,55" fill="url(#diamondGrad)" stroke="#FFFFFF"
+                        stroke-width="1.5" />
+
+                    <polygon points="100,32 100,75" stroke="rgba(255,255,255,0.7)" stroke-width="1" />
+                    <polygon points="100,32 84,75" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+                    <polygon points="100,32 116,75" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+                    <line x1="76" y1="55" x2="124" y2="55" stroke="rgba(255,255,255,0.8)" stroke-width="1" />
+                    <line x1="88" y1="44" x2="112" y2="44" stroke="rgba(255,255,255,0.9)" stroke-width="1" />
+
+                    <g class="ring-sparkle-cross">
+                        <path d="M 100 15 L 100 45 M 85 30 L 115 30" stroke="#FFFFFF" stroke-width="2.5"
+                            stroke-linecap="round" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="ring-action-hint">
+                <span>Click The Ring</span>
+                <span class="hint-arrow">💍</span>
+            </div>
+        </div>
+    </main>
+
+    <div id="proposal-modal" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="proposal-title">
+        <div class="modal-card">
+            <div class="modal-header-icon">
+                <div class="pulse-ring-mini">💍</div>
+            </div>
+
+            <h2 id="proposal-title" class="proposal-question">Will You Marry Me? 💍❤️</h2>
+            <p class="proposal-subtext">You are my today, my tomorrow, and my entire forever. Say yes to our happily
+                ever after!</p>
+
+            <div id="buttons-area" class="proposal-actions">
+                <button id="yes-btn" class="btn btn-yes">
+                    <span class="btn-sparkle">✨</span> YES 💖 <span class="btn-sparkle">✨</span>
+                </button>
+                <button id="no-btn" class="btn btn-no">
+                    NO 😅
+                    <div id="runaway-toast" class="no-speech-bubble hidden">
+                        <img src="image/blehhhh.jpg" alt="Blehhh" class="blehhh-img">
+                        <span class="blehhh-text">BLEHHH! HAHA! 😜</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-overlay" class="success-overlay hidden" role="dialog" aria-modal="true">
+        <div class="success-card">
+            <div class="wedding-image-wrapper">
+                <img src="image/wedding.png" alt="Wedding Celebration" class="wedding-img">
+                <div class="image-sparkle-badge">💍💖</div>
+            </div>
+
+            <div class="slideshow-wrapper">
+                <div class="slides-window">
+                    <div id="slides-track" class="slides-track">
+                        <div class="slide-item active">
+                            From this day forward, you will never walk alone. My heart will be your shelter, and my arms will be your home. 🏡💖
+                        </div>
+                        <div class="slide-item">
+                            I promise to love you, cherish you, and hold your hand through every single chapter of life. 🤝✨
+                        </div>
+                        <div class="slide-item">
+                            "'Cause I don't know how it gets better than this... taking your hand and walking into forever with you." 🌹💍
+                        </div>
+                        <div class="slide-item">
+                            With you, every single moment feels like a fairytale come true. You are my today, my tomorrow, and my entire forever. ✨🥂
+                        </div>
+                        <div class="slide-item">
+                            Forever & Always starts today. I love you with all my heart! ❤️♾️
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-dots" class="slide-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                </div>
+            </div>
+
+            <div class="romantic-divider">
+                <span>✦</span> <span>🌹</span> <span>✦</span>
+            </div>
+
+            <div class="success-date">
+                <span>Forever & Always Starts Today ✨</span>
+            </div>
+
+            <div class="success-actions">
+                <button id="replay-btn" class="btn btn-secondary">
+                    <span>🔄 Replay The Magic</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="celebration-canvas" class="celebration-canvas"></canvas>
+
+    <audio id="fearless-song" src="mp3/Taylor Swift - Fearless(Taylor's Version) (Lirik).mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
