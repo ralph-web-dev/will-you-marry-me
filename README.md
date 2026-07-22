@@ -1,37 +1,51 @@
-# 💍 A Forever Promise — Will You Marry Me? ✨❤️
+# Will You Marry Me - Interactive Proposal Experience
 
-An interactive, modern romantic proposal web experience built with modern web aesthetics, dynamic 3D animations, interactive sound design, and song-synchronized message slideshows.
-
----
-
-## ✨ Features
-
-- 💍 **Interactive Golden Ring Trigger**: Floating 3D golden ring with sparkle effects and sound synthesis to unlock the proposal modal.
-- 😜 **Playful Runaway "NO" Button**: Smart collision-avoiding runaway button with cheeky meme popups and funny sound effects.
-- 🎶 **Song-Synchronized Celebration**: Integrated background music (*Fearless - Taylor's Version*) that smoothly fades in when saying "YES".
-- 📜 **Song-Paced Message Slideshow**: Horizontal gliding message slideshow with progress indicators, automatically timed with the music.
-- 🎨 **5 Curated Color Themes**: Dynamic palette picker allowing real-time theme switches (*Dark Velvet, Cream Champagne, Blush Pink, Midnight Lavender, Sage Gold*).
-- 🎉 **Confetti & Particle Canvas**: Custom HTML5 canvas particle system for ambient floating sparkles and celebratory confetti bursts.
-- 📱 **100% Mobile Responsive**: Perfectly tuned for all screen sizes with touch-safe boundaries and viewport clamping.
+An interactive proposal web application designed with modern aesthetics, custom CSS glassmorphism, 3D transform animations, procedural web audio, and song-synchronized message transitions.
 
 ---
 
-## 🛠️ Built With
+## Features
 
-- **HTML5** & **Semantic Structure**
-- **Vanilla CSS3** (CSS Custom Properties, Glassmorphism, 3D Transforms & Keyframe Animations)
-- **Vanilla JavaScript (ES6+)** (Web Audio API, HTML5 Canvas Rendering, DOM Event Delegation)
+- **Interactive Ring Unlock**: A rendered 3D golden ring featuring dynamic aura animations and audio feedback to open the proposal modal.
+- **Runaway Button Mechanics**: A collision-preventing, evasive target algorithm for the negative response button that guarantees non-overlapping safe viewport coordinates.
+- **Audio Integration**: Seamless background playback for Taylor Swift - Fearless with volume fade-in and volume fade-out transitions.
+- **Song-Synchronized Message Carousel**: A horizontal sliding message track that smoothly cycles through personalized romantic statements.
+- **Real-Time Theme Engine**: A custom color palette picker supporting five distinct color themes (Dark Velvet, Cream Champagne, Blush Pink, Midnight Lavender, Sage Green).
+- **Custom Canvas Particle Systems**: Dual HTML5 canvas layers handling ambient particle physics and celebratory confetti animation bursts.
+- **Mobile First Optimization**: Fully responsive layout using dynamic clamp utilities, touch interaction handling, and viewport edge clamping.
 
 ---
 
-## 🚀 How to Run Locally
+## Architecture and Technologies
 
-1. Clone this repository:
+- **Structure**: HTML5 with semantic layout architecture.
+- **Styling**: Vanilla CSS3 utilizing custom variables, glassmorphism, 3D perspective transforms, and keyframe animations.
+- **Logic**: Vanilla JavaScript (ES6+) leveraging the Web Audio API, HTML5 Canvas API, and event delegation.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+All assets and code execute client-side natively in standard web browsers.
+
+### Installation
+
+1. Clone the repository:
    ```bash
-   git clone git@github.com:ralph-web-dev/will-you-marry-me.git
+   git clone https://github.com/ralph-web-dev/will-you-marry-me.git
    ```
-2. Open `index.html` in any web browser!
+
+2. Navigate to the directory:
+   ```bash
+   cd will-you-marry-me
+   ```
+
+3. Launch `index.html` directly in your browser.
 
 ---
 
-Built with ❤️ by [ralph-web-dev](https://github.com/ralph-web-dev).
+## License
+
+Created for personal presentation and deployment.
